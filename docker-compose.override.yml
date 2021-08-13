@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+    questionAnswerDb:
+        container_name: questionAnswerDb
+        restart: always
+        volumes:
+            - ${WEBAPP_STORAGE_HOME}/site:/data/db
+        ports:
+            - "27017:27017"
+        environment: 
+            - MONGODB_DATABASE=questionAnswerDb
